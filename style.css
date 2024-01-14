@@ -19,17 +19,16 @@ header {
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    animation: fadeInUp 0.5s ease;
 }
 
 #task-form {
     display: flex;
     margin-bottom: 15px;
-    animation: fadeInUp 0.5s ease;
 }
 
 #task-input,
-#task-date,
-#task-deadline {
+#task-date {
     flex: 1;
     padding: 12px;
     font-size: 16px;
@@ -40,8 +39,7 @@ header {
 }
 
 #task-input:focus,
-#task-date:focus,
-#task-deadline:focus {
+#task-date:focus {
     border-color: #4CAF50;
 }
 
@@ -105,6 +103,17 @@ span.date {
     animation-fill-mode: both;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -116,13 +125,13 @@ span.date {
     }
 }
 
-@keyframes fadeInUp {
+@keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         taskItem.appendChild(deleteButton);
 
         // Add animation classes
-        taskItem.classList.add("animated", "fadeIn");
+        taskItem.classList.add("animated", "slideInRight");
 
         taskList.appendChild(taskItem);
 
@@ -40,5 +40,28 @@ document.addEventListener('DOMContentLoaded', function() {
         taskDate.value = "";
     }
 
-    // ... Altre funzioni rimangono invariate ...
+    function completeTask() {
+        const taskItem = this.parentElement;
+        taskItem.classList.toggle('completed');
+    }
+
+    function deleteTask() {
+        const taskItem = this.parentElement;
+        taskList.removeChild(taskItem);
+    }
+
+    function filterTasks() {
+        const filterType = document.querySelector('input[name="filter"]:checked').value;
+        const tasks = document.querySelectorAll('#task-list li');
+
+        tasks.forEach(task => {
+            task.style.display = 'block';
+
+            if (filterType === 'completed' && !task.classList.contains('completed')) {
+                task.style.display = 'none';
+            } else if (filterType === 'incomplete' && task.classList.contains('completed')) {
+                task.style.display = 'none';
+            }
+        });
+    }
 });
