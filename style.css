@@ -131,3 +131,20 @@ span.date {
         transform: translateY(0);
     }
 }
+
+#github-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#github-link a {
+    text-decoration: none;
+}
+
+#github-link img {
+    width: 40px; /* Imposta la larghezza desiderata per l'icona di GitHub */
+    height: auto;
+    border: 0;
+}
