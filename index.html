@@ -15,7 +15,23 @@
         <div id="task-form">
             <input type="text" id="task-input" placeholder="Add a new task">
             <input type="date" id="task-date">
-            <button onclick="addTask()">Add Task</button>
+            <input type="date" id="task-deadline" placeholder="Deadline">
+            <button id="add-task-btn">Add Task</button>
+        </div>
+        
+        <div id="filters">
+            <label>
+                <input type="radio" name="filter" value="all" checked>
+                All
+            </label>
+            <label>
+                <input type="radio" name="filter" value="completed">
+                Completed
+            </label>
+            <label>
+                <input type="radio" name="filter" value="incomplete">
+                Incomplete
+            </label>
         </div>
         
         <ul id="task-list"></ul>
