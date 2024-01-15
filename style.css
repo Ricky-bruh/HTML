@@ -2,12 +2,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #23272a;
+    background-color: #f5f5f7; /* #fdfdfd */
     color: #fff;
 }
 
 header {
-    background-color: #35424a;
+    background-color: #919191; /* #35424a */
     text-align: center;
     padding: 1em 0;
 }
@@ -15,7 +15,7 @@ header {
 #app {
     max-width: 600px;
     margin: 20px auto;
-    background-color: #2c2f33;
+    background-color: #0A2342; /* #2c2f33 */
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -149,3 +149,67 @@ span.date {
     border: 0;
 }
 
+/* DARK MODE */
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.theme-toggle.dark-theme {
+    /* Posiziona l'icona della modalità scura a destra */
+    right: 60px;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f5f5f7;
+}
+
+header.dark-theme {
+    background-color: #404040;
+}
+
+#app.dark-theme {
+    background-color: #2d2d2d;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+#task-input.dark-theme,
+#task-date.dark-theme,
+#task-note.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+button.dark-theme {
+    background-color: #555;
+}
+
+button.dark-theme:hover {
+    background-color: #4d4d4d;
+}
+
+#filters.dark-theme,
+ul.dark-theme,
+li.dark-theme {
+    background-color: #2d2d2d;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+li.dark-theme.completed {
+    opacity: 0.3;
+}
+
+#github-link.dark-theme {
+    background-color: #333;
+}
+
+#github-link.dark-theme a {
+    color: #fff;
+}

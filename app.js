@@ -66,3 +66,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// DARK MODE
+
+function toggleTheme() {
+    console.log("Funzione toggleTheme chiamata.");
+
+    const body = document.body;
+    const currentTheme = body.classList.contains("dark-theme") ? "dark" : "light";
+
+    // Inverti il tema
+    body.classList.toggle("dark-theme");
+
+    // Aggiorna l'immagine in base al tema corrente
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.src = currentTheme === "dark" ? 'sun.svg' : 'moon.svg';
+
+    // Verifica se il tema è stato applicato correttamente
+    const newTheme = body.classList.contains("dark-theme") ? "dark" : "light";
+    if (currentTheme !== newTheme) {
+        // Il tema è cambiato, esegui ulteriori azioni se necessario
+        console.log("Tema cambiato a:", newTheme);
+    }
+}
+
+// Verifica se è stato salvato un tema preferito dall'utente
+const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Imposta il tema iniziale in base alle preferenze dell'utente
+if (userPrefersDark) {
+    toggleTheme();
+}
