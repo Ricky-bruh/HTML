@@ -87,6 +87,15 @@ function toggleTheme() {
         // Il tema è cambiato, esegui ulteriori azioni se necessario
         console.log("Tema cambiato a:", newTheme);
     }
+
+
+    // Aggiungi una classe temporanea per attivare l'animazione
+    body.classList.add("theme-transition");
+
+    // Rimuovi la classe temporanea dopo un breve ritardo per attivare l'animazione
+    setTimeout(() => {
+        body.classList.remove("theme-transition");
+    }, 500); // Modifica il valore in millisecondi in base alla tua animazione
 }
 
 // Verifica se è stato salvato un tema preferito dall'utente

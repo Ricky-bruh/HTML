@@ -213,3 +213,7 @@ li.dark-theme.completed {
 #github-link.dark-theme a {
     color: #fff;
 }
+
+.theme-transition {
+    transition: background-color 0.5s ease, color 0.5s ease; /* Aggiungi tutte le proprietà che desideri animare */
+}
